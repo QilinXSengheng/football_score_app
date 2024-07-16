@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:soccer_app/views/home_view/widgets/competition_card.dart';
 import 'package:soccer_app/views/results_view/result_view.dart';
+import 'package:soccer_app/views/results_view/widgets/result_bundesliga_view.dart';
+import 'package:soccer_app/views/results_view/widgets/result_L1_view.dart';
+import '../../results_view/widgets/result_laliga_view.dart';
+
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -104,6 +108,12 @@ class HomeViewBody extends StatelessWidget {
                       ),
                       Expanded(
                         child: CustomCompetitionCard(
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const ResultLaligaView();
+                            }));
+                          },
                           leagueLogo: 'assets/images/la_liga.png',
                           leagueName: 'La Liga\nBBVA',
                           leagueNation: 'Spanish championship',
@@ -118,6 +128,12 @@ class HomeViewBody extends StatelessWidget {
                     children: [
                       Expanded(
                         child: CustomCompetitionCard(
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const ResultBundesligaView();
+                            }));
+                          },
                           leagueLogo: 'assets/images/bundes_liga.png',
                           leagueName: 'Bundes\nLiga',
                           leagueNation: 'German championship',
@@ -128,6 +144,12 @@ class HomeViewBody extends StatelessWidget {
                       ),
                       Expanded(
                         child: CustomCompetitionCard(
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const ResultL1View();
+                            }));
+                          },
                           leagueLogo: 'assets/images/league_1.jpg',
                           leagueName: 'League 1 Conforama',
                           leagueNation: 'French championship',
